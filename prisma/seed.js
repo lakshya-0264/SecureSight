@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-const main = async () => {
+export async function seed() {
   await prisma.camera.createMany({
     data: [
       { name: 'Shop Floor A', location: '1st Floor - North Wing' },
@@ -36,7 +36,7 @@ const main = async () => {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  main()
+  seed()
     .then(() => prisma.$disconnect())
     .catch(async (e) => {
       console.error(e)
