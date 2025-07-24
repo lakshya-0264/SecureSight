@@ -4,6 +4,7 @@ import IncidentPlayer from "@/components/IncidentPlayer";
 import Navbar from "@/components/Navbar";
 import ControlBar from "@/components/ControlBar";
 import TimelineWidget from "@/components/TimelineWidget";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -24,6 +25,7 @@ export default function Home() {
           <TimelineWidget />
         </div>
       </main>
+      <Footer/>
     </>
   );
 }

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Camera, Lock, CheckCircle, Car, AlertTriangle, Siren, DoorOpen as UnauthorizedIcon, Users, UserSearch,} from 'lucide-react';
 
 const TimelineWidget = () => {
-  const [currentTime, setCurrentTime] = useState(null); // 03:23:45 in hours
+  const [currentTime, setCurrentTime] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const timelineRef = useRef(null);
   const rulerRef = useRef(null);
