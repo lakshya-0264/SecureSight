@@ -47,7 +47,6 @@ export default function ControlBar({
         <button type="button" className={btn} aria-label="Step forward">
           <LoopButton/>
         </button>
-        {/* Fast Forward (>>) */}
         <button type="button" className={btn} aria-label="Skip forward">
           <VideoForwardButton/>
         </button>
@@ -66,8 +65,6 @@ export default function ControlBar({
           <span>{speed}</span> <span><SpeedIcon /></span>
         </span>
       </div>
-
-      {/* Right (keep as spacer or add buttons if needed) */}
       <div className="flex flex-row items-center gap-[16px] h-[20px]" />
     </div>
   );

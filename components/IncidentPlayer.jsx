@@ -10,12 +10,14 @@ export default function IncidentPlayer() {
   ]
 
   const [activeImage, setActiveImage] = useState(cameraData[0])
-  const [currentTime, setCurrentTime] = useState(new Date())
+  // const [currentTime, setCurrentTime] = useState(new Date())
 
-  useEffect(() => {
-    const interval = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(interval)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => setCurrentTime(new Date()), 1000)
+  //   return () => clearInterval(interval)
+  // }, [])
+
+  const currentTime = new Date();
 
   return (
     <div className="relative w-[60vw] h-[449px] rounded-md overflow-hidden">
