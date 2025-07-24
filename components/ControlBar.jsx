@@ -1,18 +1,27 @@
 "use client";
 import { Play, Rewind, FastForward, Circle, Pause } from "lucide-react";
-
-const currentTime = new Date();
-const formattedTime =
-  currentTime.toLocaleTimeString("en-IN", { hour12: false }) +
-  " (" + currentTime.toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric"}) + ")";
+import { useEffect, useState } from "react";
 
 
-export default function ControlBar({
-  time =  formattedTime,
-  speed = "1x",
-}) {
+export default function ControlBar({ speed = "1x"}) {
   
   const btn = "flex justify-center items-center p-[2px] rounded-[6px] bg-transparent hover:bg-[#232323] transition-colors duration-75";
+
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const now = new Date();
+    const formatted =
+      now.toLocaleTimeString("en-IN", { hour12: false }) +
+      " (" +
+      now.toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      }) +
+      ")";
+    setTime(formatted);
+  }, []);
 
   return (
     <div

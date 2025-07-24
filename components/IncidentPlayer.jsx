@@ -10,14 +10,16 @@ export default function IncidentPlayer() {
   ]
 
   const [activeImage, setActiveImage] = useState(cameraData[0])
-  // const [currentTime, setCurrentTime] = useState(new Date())
+  const [currentTime, setCurrentTime] = useState(null)
 
   // useEffect(() => {
   //   const interval = setInterval(() => setCurrentTime(new Date()), 1000)
   //   return () => clearInterval(interval)
   // }, [])
 
-  const currentTime = new Date();
+  useEffect(() => {
+    setCurrentTime(new Date())
+  }, [])
 
   return (
     <div className="relative w-[60vw] h-[449px] rounded-md overflow-hidden">
@@ -29,10 +31,12 @@ export default function IncidentPlayer() {
       />
 
       {/* Top-left Date & Time Badge with Icon */}
-      <div className="absolute top-2 left-2 bg-black/80 text-white text-xs font-medium px-3 py-1 rounded-md flex items-center gap-2">
-        <CalendarDays size={14} className="text-white" />
-        {currentTime.toLocaleDateString("en-IN")} – {currentTime.toLocaleTimeString("en-IN", { hour12: false })}
-      </div>
+      {currentTime && (
+        <div className="absolute top-2 left-2 bg-black/80 text-white text-xs font-medium px-3 py-1 rounded-md flex items-center gap-2">
+          <CalendarDays size={14} className="text-white" />
+          {currentTime.toLocaleDateString("en-IN")} – {currentTime.toLocaleTimeString("en-IN", { hour12: false })}
+        </div>
+      )}
 
       {/* Bottom-left Camera Label with centered red dot */}
       <div className="absolute bottom-2 left-2 bg-black/90 text-white text-sm px-3 py-1 rounded-md flex items-center gap-2">
