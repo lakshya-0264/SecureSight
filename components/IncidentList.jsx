@@ -117,7 +117,7 @@ export default function IncidentList() {
       ) : (
         <div className="max-w-[39vw] max-h-[394px]">
         <div className="space-y-4 max-h-[394px] overflow-y-auto pr-2">
-          {incidents.map((incident) => (
+          {incidents && incidents.map((incident) => (
             <div
               key={incident.id}
               className="pt-[4px] pb-[4px] pl-[4px] pr-[12px] max-h-[75px] rounded-[6px] flex items-center gap-[16px] relative"

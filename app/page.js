@@ -3,6 +3,7 @@ import IncidentList from "@/components/IncidentList";
 import IncidentPlayer from "@/components/IncidentPlayer";
 import Navbar from "@/components/Navbar";
 import ControlBar from "@/components/ControlBar";
+import TimelineWidget from "@/components/TimelineWidget";
 
 export default function Home() {
 
@@ -18,6 +19,9 @@ export default function Home() {
         </div>
         <div className="flex-1">
           <ControlBar />
+        </div>
+        <div className="flex-1">
+          <TimelineWidget />
         </div>
       </main>
     </>
