@@ -25,7 +25,7 @@ export default function ControlBar({ speed = "1x"}) {
 
   return (
     <div
-      className="w-full max-w-[1392px] h-[44px] flex flex-row items-center justify-between px-4 bg-[#131313] rounded-[6px]"
+      className="w-full max-w-screen h-[44px] flex flex-row items-center justify-between px-4 bg-[#131313] rounded-[6px]"
       style={{
         minWidth: 0,
         gap: 0,
