@@ -72,11 +72,11 @@ For production deployment on Vercel:
 - **Prisma**: Type-safe database queries and schema migrations
 - **TailwindCSS**: Utility-first CSS for rapid UI development
 - **Lucide Icons**: Modern icons for events and camera indicators
-- **Avatars**: We have used [Liara Avatar API](https://avatar-placeholder.iran.liara.run/) for user avatars.  
+- **Avatars**: We have used [UiAvatars API](https://ui-avatars.com/) for user avatars.  
   Example usage:
-  ```html
-  <img src="https://avatar.iran.liara.run/username?username=Lakshya+Singhal" alt="User Avatar" width="40" height="40"/>
-
+    ```html
+   <img src="https://ui-avatars.com/api/?size=128&background=random&name=Lakshya+Singhal" alt="User" className="w-8 h-8 rounded-full object-cover" />
+    ```
 
 ## Future Improvements
 
