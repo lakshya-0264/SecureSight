@@ -33,7 +33,7 @@ export default function Navbar() {
       {/* Right: Profile */}
       <div className="flex items-center gap-3">
         <img
-          src="/profile.png"
+          src="https://avatar.iran.liara.run/username?username=Lakshya+Singhal"
           alt="User"
           className="w-8 h-8 rounded-full object-cover"
         />

@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SecureSight
 
-## Getting Started
+SecureSight is a modern CCTV monitoring dashboard that supports up to 3 live camera feeds. It leverages intelligent incident tracking (e.g., unauthorized access, gun threats) and presents them with an interactive 24-hour timeline UI.
 
-First, run the development server:
+## 🚀 Live Demo
 
+🌐 [Live Site](https://secure-sight-ls.vercel.app)
+
+## 📁 Public Repository
+
+🔗 [GitHub Repository](https://github.com/lakshya-0264/SecureSight)
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js (App Router) + TailwindCSS
+- **Database**: Neon Postgres
+- **ORM**: Prisma
+- **Deployment**: Vercel
+
+## Environment Variables
+
+Create a `.env` file and add the following:
+
+### Development
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NODE_ENV=development
+DATABASE_URL=your_neon_development_database_url
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production
+```bash
+NODE_ENV=production
+DATABASE_URL=your_neon_production_database_url
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deployment Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 1. Clone the repo
+git clone https://github.com/lakshya-0264/SecureSight
+cd securesight
 
-## Learn More
+# 2. Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Set up .env file
+# Add .env file as described above
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 4. Push schema to Neon
+# Development
+npx prisma migrate dev --name init
+# Production (Vercel CLI)
+npx prisma migrate deploy 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 5. Optional: Seed your dev database
+# Make sure you have NODE_ENV=development in your .env file
+npm run seed
 
-## Deploy on Vercel
+# 6. Start development
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For production deployment on Vercel:
+- Set `DATABASE_URL` and `NODE_ENV` in the Vercel dashboard
+- Deploy using GitHub integration or Vercel CLI
+- To Seed in production, There is a different API endpoint.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Decisions
+
+- **Next.js App Router**: Better routing, layout management, and file-based structure
+- **Neon DB**: Scalable Postgres with branching support for dev & prod
+- **Prisma**: Type-safe database queries and schema migrations
+- **TailwindCSS**: Utility-first CSS for rapid UI development
+- **Lucide Icons**: Modern icons for events and camera indicators
+- **Avatars**: We have used [Liara Avatar API](https://avatar-placeholder.iran.liara.run/) for user avatars.  
+  Example usage:
+  ```html
+  <img src="https://avatar.iran.liara.run/username?username=Lakshya+Singhal" alt="User Avatar" width="40" height="40"/>
+
+
+## Future Improvements
+
+- Add Admin Authentication
+- Add user role-based access controls
+- Add video thumbnails per event
+- Enable real-time socket integration for live events
+- Camera stream preview
+- Fullscreen timeline view
+
+## Contact
+
+For any queries related to setup, deployment, or contributions, feel free to reach out:
+
+- Send us an [Email](mailto:lakshyasinghal2320@gmail.com)
+- GitHub Issues: [https://github.com/lakshya-0264/SecureSight/issues](https://github.com/your-username/your-repo/issues)
+- Website: [https://secure-sight-ls.vercel.app](https://secure-sight-ls.vercel.app)
+
+
+---
+
+© 2025 SecureSight. All right reserved.
